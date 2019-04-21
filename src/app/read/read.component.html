@@ -1,0 +1,18 @@
+<div class="right" *ngIf="models">
+  <div class="container">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Notes</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li *ngFor="let model of models | async" class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <!--<input class="form-check-input" (change)="deleteNote(i)" type="checkbox" />-->
+            <h6 class="my-0">{{model.title}}</h6>
+            <small class="text-muted">{{model.body}}</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
