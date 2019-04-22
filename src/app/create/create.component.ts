@@ -3,6 +3,7 @@ import { Store } from "@ngrx/store";
 import { AppState } from "./../app.state";
 import { Model } from "./../models/models.model";
 import * as ChallengeActions from "./../actions/challenge.actions";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-create",
@@ -10,8 +11,8 @@ import * as ChallengeActions from "./../actions/challenge.actions";
   styleUrls: ["./create.component.css"]
 })
 export class CreateComponent implements OnInit {
-  constructor(private store: Store<AppState>) {}
-
+  constructor(private http: HttpClient, private store: Store<AppState>) {}
+  selectedFile = null;
   addNote(title, body) {
     this.store.dispatch(
       new ChallengeActions.AddNotes({ title: title, body: body })
@@ -20,6 +21,14 @@ export class CreateComponent implements OnInit {
 
   deleteNote(index) {
     this.store.dispatch(new ChallengeActions.RemoveNotes(index));
+  }
+
+  onFileSelected(event) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload() {
+    this.http.post;
   }
   ngOnInit() {}
 }

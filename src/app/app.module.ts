@@ -9,6 +9,8 @@ import { CreateComponent } from "./create/create.component";
 import { HeaderComponent } from "./header/header.component";
 import { AboutComponent } from "./about/about.component";
 import { Routes, RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { FooterComponent } from "./footer/footer.component";
 
 const routes: Routes = [];
 
@@ -18,12 +20,14 @@ const routes: Routes = [];
     ReadComponent,
     CreateComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({
       challenge: reducer
     })

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Fill your notes</h4>
-      <form class="needs-validation" novalidate="">
+      <form class="md-form" novalidate="">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="titleName">Title</label>
@@ -15,9 +15,29 @@
             <input type="text" id="noteName" placeholder="insert note" value="" required="" #url>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <button class="btn btn-light btn-sm" (click)="addNote(name.value,url.value)">Add Note</button>
+            <button class="btn btn-light btn-sm" (click)="deleteNote(i)">Delete Note</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button type="submit" (click)="onUpload">Upload</button>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                  aria-describedby="inputGroupFileAddon01" (change)="onFileSelected($event)">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
-      <button class="btn btn-light btn-sm" (click)="addNote(name.value,url.value)">Add Note</button>
-      <button class="btn btn-light btn-sm" (click)="deleteNote(i)">Delete Note</button>
+
     </div>
+
   </div>
 </div>
