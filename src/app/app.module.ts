@@ -11,6 +11,7 @@ import { AboutComponent } from "./about/about.component";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { FooterComponent } from "./footer/footer.component";
+//import { RlTagInputModule } from "angular2-tag-input";
 
 const routes: Routes = [];
 
@@ -25,6 +26,7 @@ const routes: Routes = [];
   ],
   imports: [
     RouterModule.forRoot(routes),
+    //RlTagInputModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

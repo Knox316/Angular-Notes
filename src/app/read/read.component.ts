@@ -3,7 +3,7 @@ import { Store } from "@ngrx/store";
 import { Model } from "./../models/models.model";
 import { AppState } from "./../app.state";
 import { Observable } from "rxjs";
-import * as jsPDF from "jspdf";
+//import * as jsPDF from "jspdf";
 
 @Component({
   selector: "app-read",
@@ -17,11 +17,12 @@ export class ReadComponent implements OnInit {
   }
 
   //incomplete
-  downloadPdf() {
+  //disabled until finished
+  /*downloadPdf() {
     let doc = new jsPDF();
     doc.addHTML(document.getElementById("contain"), function() {
       doc.save("note.pdf");
     });
-  }
+  }*/
   ngOnInit() {}
 }
