@@ -16,6 +16,7 @@ export class ReadComponent implements OnInit {
     this.models = store.select("challenge");
   }
 
+  searchTerm: string;
   //incomplete
   //disabled until finished
   /*downloadPdf() {
@@ -24,5 +25,6 @@ export class ReadComponent implements OnInit {
       doc.save("note.pdf");
     });
   }*/
+
   ngOnInit() {}
 }

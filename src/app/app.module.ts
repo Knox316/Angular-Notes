@@ -11,6 +11,9 @@ import { AboutComponent } from "./about/about.component";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { FooterComponent } from "./footer/footer.component";
+import { FormsModule } from "@angular/forms";
+import { NoteFilterPipe } from "./read/read-filter.pipe";
+
 //import { RlTagInputModule } from "angular2-tag-input";
 
 const routes: Routes = [];
@@ -22,10 +25,12 @@ const routes: Routes = [];
     CreateComponent,
     HeaderComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    NoteFilterPipe
   ],
   imports: [
     RouterModule.forRoot(routes),
+    FormsModule,
     //RlTagInputModule,
     BrowserModule,
     AppRoutingModule,
