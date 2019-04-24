@@ -1,6 +1,6 @@
 <div class="right" *ngIf="models">
   <div class="container">
-    <div class="col-md-4 order-md-2 mb-4">
+    <div class="col-md-auto">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Notes</span>
       </h4>
@@ -16,6 +16,9 @@
             <!--<input class="form-check-input" (change)="deleteNote(i)" type="checkbox" />-->
             <h6 class="my-0">{{model.title}}</h6>
             <small class="text-muted">{{model.body}}</small>
+            <div>
+              <b>Tags: </b><span class="badge badge-pill badge-dark">{{model.tag}}</span>
+            </div>
           </div>
           <!--<button (click)="downloadPdf()">Export to PDF</button>-->
         </li>

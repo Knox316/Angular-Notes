@@ -13,9 +13,9 @@ import { HttpClient } from "@angular/common/http";
 export class CreateComponent implements OnInit {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
   selectedFile = null;
-  addNote(title, body) {
+  addNote(title, body, tag) {
     this.store.dispatch(
-      new ChallengeActions.AddNotes({ title: title, body: body })
+      new ChallengeActions.AddNotes({ title: title, body: body, tag: tag })
     );
   }
 

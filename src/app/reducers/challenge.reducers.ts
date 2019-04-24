@@ -4,7 +4,8 @@ import * as ChallengeActions from "./../actions/challenge.actions";
 
 const initialState: Model = {
   title: "First Note",
-  body: "www.google.pt"
+  body: "www.google.pt",
+  tag: "exampleTag"
 };
 
 export function reducer(
