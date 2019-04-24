@@ -13,10 +13,39 @@ import { HttpClientModule } from "@angular/common/http";
 import { FooterComponent } from "./footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { NoteFilterPipe } from "./read/read-filter.pipe";
+import { ListNotesComponent } from "./list-notes/list-notes.component";
+import { FaqComponent } from "./faq/faq.component";
+import { ContactComponent } from "./contact/contact.component";
 
 //import { RlTagInputModule } from "angular2-tag-input";
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  {
+    path: "create",
+    component: CreateComponent
+  },
+  {
+    path: "about",
+    component: AboutComponent
+  },
+  {
+    path: "list",
+    component: ReadComponent
+  },
+  {
+    path: "faq",
+    component: FaqComponent
+  },
+  {
+    path: "contact",
+    component: ContactComponent
+  },
+  {
+    path: "",
+    redirectTo: "/about",
+    pathMatch: "full"
+  }
+];
 
 @NgModule({
   declarations: [
@@ -26,10 +55,13 @@ const routes: Routes = [];
     HeaderComponent,
     AboutComponent,
     FooterComponent,
-    NoteFilterPipe
+    NoteFilterPipe,
+    ListNotesComponent,
+    FaqComponent,
+    ContactComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     //RlTagInputModule,
     BrowserModule,

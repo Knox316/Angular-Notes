@@ -17,6 +17,7 @@ export class CreateComponent implements OnInit {
     this.store.dispatch(
       new ChallengeActions.AddNotes({ title: title, body: body, tag: tag })
     );
+    alert("Note added with sucess!");
   }
 
   deleteNote(index) {
