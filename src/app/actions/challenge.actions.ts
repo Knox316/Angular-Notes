@@ -15,7 +15,7 @@ export class AddNotes implements Action {
 export class RemoveNotes implements Action {
   readonly type = REMOVE_NOTES;
 
-  constructor(public payload: number) {}
+  constructor(public id: number) {}
 }
 
 export class UpdateNotes implements Action {

@@ -9,16 +9,36 @@
         <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search by title">
       </div>
       <hr>
-      <ul class="list-group mb-3">
+      <div class="form-group">
+        <button class="btn btn-light btn-sm" (click)="downloadPdf()"> Export to PDF</button>
+      </div>
+      <ul class="list-group mb-3" #container>
         <li *ngFor="let model of models | async | noteFilter: searchTerm"
           class="list-group-item d-flex justify-content-between lh-condensed">
-          <div id="contain">
+          <div class="container">
             <!--<input class="form-check-input" (change)="deleteNote(i)" type="checkbox" />-->
-            <h6 class="my-0">{{model.title}}</h6>
-            <small class="text-muted">{{model.body}}</small>
-            <div>
+            <div class="row">
+              <div class="col">
+                <b>{{model.title}}</b>
+              </div>
+              <div class="col-md-auto">
+                <button class="btn btn-light btn-sm" (click)="deleteNote(model.id)">Delete Note</button>
+
+              </div>
+              <div class="col col-lg-2">
+                <button class="btn btn-light btn-sm" (click)="editNote(i)"> Edit</button>
+              </div>
+            </div>
+            <hr>
+            <div class="row justify-content-md-left">
+              <div class="text-muted">{{model.body}}</div>
+            </div>
+            <hr>
+            <div class="row justify-content-md-center">
               <b>Tags: </b><span class="badge badge-pill badge-dark">{{model.tag}}</span>
             </div>
+            <hr>
+
           </div>
           <!--<button (click)="downloadPdf()">Export to PDF</button>-->
         </li>

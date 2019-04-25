@@ -4,6 +4,7 @@ import { AppState } from "./../app.state";
 import { Model } from "./../models/models.model";
 import * as ChallengeActions from "./../actions/challenge.actions";
 import { HttpClient } from "@angular/common/http";
+import { identifierModuleUrl } from "@angular/compiler";
 
 @Component({
   selector: "app-create",
@@ -15,9 +16,13 @@ export class CreateComponent implements OnInit {
   selectedFile = null;
   addNote(title, body, tag) {
     this.store.dispatch(
-      new ChallengeActions.AddNotes({ title: title, body: body, tag: tag })
+      new ChallengeActions.AddNotes({
+        title: title,
+        body: body,
+        tag: tag
+      })
     );
-    alert("Note added with sucess!");
+    alert(`Note ${title} added with sucess!`);
   }
 
   deleteNote(index) {

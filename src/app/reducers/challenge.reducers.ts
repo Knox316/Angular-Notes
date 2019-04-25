@@ -19,7 +19,7 @@ export function reducer(
       return [...state, action.payload];
     //Remove Notes
     case ChallengeActions.REMOVE_NOTES:
-      state.splice(action.payload, 1);
+      state.splice(action.id, 1);
       return state;
     //Delete Notes
     case ChallengeActions.UPDATE_NOTES:

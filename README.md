@@ -1,3 +1,5 @@
+#start
+Run `ng serve -o --base-href /notes/`
 #Missing routing and badges that was my next step but incomplete due to time
 From what i could do, i missed PDF export, routing, tags and the update to update the note on double click.
 Incomplete due to time and hollydays.
