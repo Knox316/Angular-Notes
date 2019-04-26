@@ -21,9 +21,22 @@
           <input type="text" id="tagName" placeholder="insert tag" name="tagName" [(ngModel)]="tagName" #tag>
         </div>
         <hr>
+        <div class="form-group">
+          <label for="photo">Insert Image</label>
+          <input type="text" id="photo" placeholder="insert photo url" name="photo" [(ngModel)]="photo" #photoLink>
+        </div>
+        <div class="form-group">
+          <button type="button" (click)="togglePicPreview()"
+            class="btn btn-light btn-sm">{{previewPic? "Hide " : "Show "}} image</button>
+        </div>
+        <div class="form-group">
+          <img [src]="photo" height="150" width="150" *ngIf="previewPic" />
+        </div>
+        <hr>
         <div class="row">
           <div class="col-md-6 mb-3">
-            <button class="btn btn-light btn-sm" (click)="addNote(title.value, name.value, tag.value)">Add
+            <button class="btn btn-light btn-sm" type="submit"
+              (click)="addNote(title.value, name.value, tag.value, photoLink.value)">Add
               Note</button>
           </div>
         </div>

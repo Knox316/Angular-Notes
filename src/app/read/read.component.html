@@ -33,12 +33,15 @@
             <div class="row justify-content-md-left">
               <div class="text-muted">{{model.body}}</div>
             </div>
-            <hr>
-            <div class="row justify-content-md-center">
-              <b>Tags: </b><span class="badge badge-pill badge-dark">{{model.tag}}</span>
+            <hr #myTag>
+            <div class="row justify-content-md-center" #myTag>
+              <b>Tags: </b><span class="badge badge-pill badge-dark" (click)="myTag.remove()">{{model.tag}}</span>
             </div>
             <hr>
 
+            <div class="row justify-content-md-center" id="getPic">
+              <img src={{model.photo}} />
+            </div>
           </div>
           <!--<button (click)="downloadPdf()">Export to PDF</button>-->
         </li>

@@ -13,13 +13,14 @@ import { identifierModuleUrl } from "@angular/compiler";
 })
 export class CreateComponent implements OnInit {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
-  selectedFile = null;
-  addNote(title, body, tag) {
+  previewPic = false;
+  addNote(title, body, tag, photo) {
     this.store.dispatch(
       new ChallengeActions.AddNotes({
         title: title,
         body: body,
-        tag: tag
+        tag: tag,
+        photo: photo
       })
     );
     alert(`Note ${title} added with sucess!`);
@@ -29,8 +30,8 @@ export class CreateComponent implements OnInit {
     this.store.dispatch(new ChallengeActions.RemoveNotes(index));
   }
 
-  onFileSelected(event) {
-    this.selectedFile = event.target.files[0];
+  togglePicPreview() {
+    this.previewPic = !this.previewPic;
   }
 
   onUpload() {}

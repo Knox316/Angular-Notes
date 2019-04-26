@@ -27,6 +27,7 @@
     "angular2-tag-input": "^1.2.3",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "html2canvas": "^1.0.0-rc.1",
     "jquery": "^3.4.0",
     "jspdf": "^1.5.3",
     "ngx-sharebuttons": "^4.1.4",
